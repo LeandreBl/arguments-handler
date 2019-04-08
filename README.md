@@ -6,6 +6,8 @@ A simple C argument parser and handler to replace using getopt and getoptlong
 ```C
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include <arguments.h>
 
@@ -46,7 +48,7 @@ static const arg_handler(struct human_s) OPTIONS[] = {
 
 /* An implementation for -h / --help is coming soon */
 
-int main(int ac, char **av)
+int main(int ac, const char *av[])
 {
         opts_handler_t handler;
         struct human_s human;
