@@ -33,6 +33,7 @@ static int is_rh_handler(struct human_s *human, __attribute__ ((unused)) const c
         return (0);
 }
 
+/* It uses a macro to ensure type safety at compilation, avoiding void * all other the place */
 static const arg_handler(struct human_s) OPTIONS[] = {
         {"-a", "--age", age_handler, "The age of your character", "POSITIVE INTEGER", true},
         {"-r", "--isrighthanded", is_rh_handler, "If your character is right handed", NULL, false}
