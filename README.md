@@ -3,6 +3,7 @@ A simple C argument parser and handler to replace using getopt and getoptlong
 
 `Here is a code example`
 
+```C
 struct human_s {
         size_t age;
         bool is_right_handed : 1;
@@ -53,3 +54,4 @@ int main(int ac, char **av)
         // do whatever you want, this does not need any cleanup
         return (EXIT_SUCCESS);
 }
+```
