@@ -4,6 +4,11 @@ A simple C argument parser and handler to replace using getopt and getoptlong
 `Here is a code example`
 
 ```C
+#include <stdbool.h>
+#include <stdio.h>
+
+#include <arguments.h>
+
 struct human_s {
         size_t age;
         bool is_right_handed : 1;
