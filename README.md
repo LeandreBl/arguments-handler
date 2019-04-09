@@ -43,7 +43,9 @@ static int is_rh_handler(struct human_s *human, __attribute__ ((unused)) const c
 /* It uses a macro to ensure type safety at compilation, avoiding void * all other the place */
 static const arg_handler(struct human_s) OPTIONS[] = {
     {"-a", "--age", age_handler, "The age of your character", "POSITIVE INTEGER", true},
-    {"-r", "--isrighthanded", is_rh_handler, "If your character is right handed", NULL, false}
+    {"-r", "--isrighthanded", is_rh_handler, "If your character is right handed", NULL, false},
+    {"-h", "--help", OPTS_HELP_HANDLER, "Display this help", NULL, false},
+    /* The OPTS_HELP_HANDLER function flag will display a custom help message based on the given values */
 };
 
 /* An implementation for -h / --help is coming soon */
