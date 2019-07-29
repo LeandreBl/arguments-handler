@@ -66,7 +66,6 @@ int opts_get(const opts_handler_t *opts, int ac, const char *av[], void *data)
       if (chk != 0)
         return (chk);
       ret += chk;
-      ++i;
     }
   }
   return (ret);
