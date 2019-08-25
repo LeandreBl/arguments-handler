@@ -1,4 +1,10 @@
 # arguments-handler
+
+[![Build Status](https://travis-ci.org/LeandreBl/arguments-handler.svg?branch=master)](https://travis-ci.org/LeandreBl/arguments-handler)
+<a href="https://scan.coverity.com/projects/leandrebl-arguments-handler">
+  <img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/18979/badge.svg"/>
+</a>
+
 A simple C argument parser and handler to replace using getopt and getoptlong
 
 `Here is a code example`

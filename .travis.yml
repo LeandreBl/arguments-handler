@@ -1,0 +1,29 @@
+language: c
+compiler:
+  - gcc
+script: git clone https://github.com/Snaipe/Criterion.git &&
+        mkdir Criterion/build && cd Criterion/build && git checkout master &&
+        cmake .. && cmake --build . && cd ../.. &&
+        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/Criterion/build &&
+        export LIBRARY_PATH=$LIBRARY_PATH:$PWD/Criterion/build &&
+        export C_INCLUDE_PATH=$C_INCLUDE_PATH:$PWD/Criterion/include &&
+        make fclean && make tests_run -j
+
+ env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: COVERITY_SCAN_TOKEN
+
+ before_install:
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+ addons:
+  coverity_scan:
+    project:
+      name: "LeandreBl/arguments-handler"
+      description: "Parser for opt and optlong arguments in C"
+    notification_email: leandre.blanchard@epitech.eu
+    build_command_prepend: ""
+    build_command: ""
+    branch_pattern: master
